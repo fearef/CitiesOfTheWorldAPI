@@ -26,12 +26,12 @@ namespace CitiesOfTheWorldAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostLogMessageAsync([FromBody] CityRequest cityRequest)
+        public async Task<IActionResult> PostCityRequestAsync([FromBody] CityRequest cityRequest)
         {
             try
             {              
                 HttpContent content = new StringContent(JsonSerializer.Serialize(cityRequest,CityRequest.JsonSerializerOptions), Encoding.UTF8, "application/json");              
-                return Ok(cityRequest);
+                return Ok(new CityResponse() { Population= 1388308 });
             }
             catch (ArgumentNullException)
             {
