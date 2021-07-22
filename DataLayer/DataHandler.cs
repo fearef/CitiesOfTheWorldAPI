@@ -9,7 +9,7 @@ namespace CitiesOfTheWorldAPI.DataLayer
     public class DataHandler
     {
        
-        public CityResponse PopulationQuery(CityRequest cityRequest,CityResponse cityResponse=null)
+        public static CityResponse PopulationQuery(CityRequest cityRequest,CityResponse cityResponse=null)
         {
           cityResponse ??= new CityResponse();
           if(DataTable.Count==0)
@@ -29,19 +29,19 @@ namespace CitiesOfTheWorldAPI.DataLayer
                 }
                    
             
-            return new CityResponse();
+            return cityResponse;
         }
 
-        private void ParseCSV(string csv)
+        private static void ParseCSV(string csv)
         {
             DataTable = csv.Split("\n").Select(x => x.Split(",")).ToList();
         }
 
-        private  List<string[]> DataTable=new List<string[]>();
+        private static  List<string[]> DataTable=new List<string[]>();
 
 
         //returns -1 if no property exists
-        private int GetIndexFromPropertyName(string rowName)
+        private static int GetIndexFromPropertyName(string rowName)
         {
             return DataTable[0].ToList().IndexOf(rowName);
         }

@@ -1,4 +1,5 @@
-﻿using CitiesOfTheWorldAPI.Models;
+﻿using CitiesOfTheWorldAPI.DataLayer;
+using CitiesOfTheWorldAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -31,7 +32,7 @@ namespace CitiesOfTheWorldAPI.Controllers
             try
             {              
                 HttpContent content = new StringContent(JsonSerializer.Serialize(cityRequest,CityRequest.JsonSerializerOptions), Encoding.UTF8, "application/json");              
-                return Ok(new CityResponse() { Population= 1388308 });
+                return Ok(DataHandler.PopulationQuery(cityRequest) );
             }
             catch (ArgumentNullException)
             {
