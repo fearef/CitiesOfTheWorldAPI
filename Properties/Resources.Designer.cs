@@ -59,5 +59,63 @@ namespace CitiesOfTheWorldAPI.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to name,country,subcountry,geonameid
+        ///les Escaldes,Andorra,Escaldes-Engordany,3040051
+        ///Andorra la Vella,Andorra,Andorra la Vella,3041563
+        ///Umm al Qaywayn,United Arab Emirates,Umm al Qaywayn,290594
+        ///Ras al-Khaimah,United Arab Emirates,Raʼs al Khaymah,291074
+        ///Khawr Fakkān,United Arab Emirates,Ash Shāriqah,291696
+        ///Dubai,United Arab Emirates,Dubai,292223
+        ///Dibba Al-Fujairah,United Arab Emirates,Al Fujayrah,292231
+        ///Dibba Al-Hisn,United Arab Emirates,Al Fujayrah,292239
+        ///Sharjah,United Arab Emirates,Ash Shāriqah,292672 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string cities_geonames {
+            get {
+                return ResourceManager.GetString("cities_geonames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geoname ID,Coordinates
+        ///1861602,&quot;35.25,136.78333&quot;
+        ///1861825,&quot;31.61667,130.4&quot;
+        ///1861949,&quot;35.3,136.8&quot;
+        ///1863310,&quot;34.88333,132.08333&quot;
+        ///1864549,&quot;35.0,137.03333&quot;
+        ///1864557,&quot;35.9944,138.15428&quot;
+        ///1865207,&quot;37.00059,138.2259&quot;
+        ///2111065,&quot;38.75861,140.30083&quot;
+        ///2112232,&quot;36.78671,140.74901&quot;
+        ///2112903,&quot;37.44722,140.5771&quot;
+        ///2130629,&quot;43.77063,142.36489&quot;
+        ///6822130,&quot;35.74242,139.42635&quot;
+        ///6822163,&quot;35.818,139.368&quot;
+        ///6822182,&quot;35.73531,140.12445&quot;
+        ///6822195,&quot;35.17388,138.90691&quot;
+        ///6822196,&quot;34.59882,138.21934&quot;
+        ///10913492,&quot;35.72634,139.90392&quot;
+        ///11397285,&quot;33.35634,13 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string geonames_coordinates {
+            get {
+                return ResourceManager.GetString("geonames_coordinates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country or Area,Year,Area,Sex,City,City type,Record Type,Reliability,Source Year,Value,Value Footnotes
+        ///Åland Islands,2013,Total,Both Sexes,MARIEHAMN,City proper,Estimate - de jure,&quot;Final figure, complete&quot;,2014,11370,
+        ///Åland Islands,2012,Total,Both Sexes,MARIEHAMN,City proper,Estimate - de jure,&quot;Final figure, complete&quot;,2013,11304.5,
+        ///Åland Islands,2011,Total,Both Sexes,MARIEHAMN,City proper,Estimate - de jure,&quot;Final figure, complete&quot;,2012,11226.5,
+        ///Åland Islands,2010,Total,Both Sexes,MARIEHAMN,City proper,E [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string populations {
+            get {
+                return ResourceManager.GetString("populations", resourceCulture);
+            }
+        }
     }
 }
