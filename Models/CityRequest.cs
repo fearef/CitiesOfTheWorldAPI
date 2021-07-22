@@ -9,7 +9,7 @@ namespace CitiesOfTheWorldAPI.Models
     public class CityRequest
     {
         public string CityName { get; set; }
-        public int Year { get; set; }
+        public int Year { get; set; } = -1;
 
         public static JsonSerializerOptions JsonSerializerOptions { get; private set; } = new JsonSerializerOptions() { PropertyNamingPolicy=JsonNamingPolicy.CamelCase };
     }

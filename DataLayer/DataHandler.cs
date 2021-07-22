@@ -17,10 +17,18 @@ namespace CitiesOfTheWorldAPI.DataLayer
                 ParseCSV(Properties.Resources.populations);
             }
             var propertiesNames = cityRequest.GetType().GetProperties().Select(x => x.Name);
-            foreach (var name in propertiesNames)
-            {
-                //DataTable.Where(x=>x[GetIndexFromPropertyName(name)]== CityRequest.GetProperty(name).GetValue)
-            }
+            
+                var cityData = DataTable.Where(x => x[GetIndexFromPropertyName("City")] == cityRequest.CityName);
+                if(cityRequest.Year!=-1)
+                {
+                  cityResponse.Population=int.Parse(cityData.First(x => x[GetIndexFromPropertyName("Year")] == cityRequest.Year.ToString())[GetIndexFromPropertyName("Value")]);
+                }
+                else
+                {
+                  cityResponse.Population = int.Parse(cityData.OrderByDescending(x => x[GetIndexFromPropertyName("Year")]).First()[GetIndexFromPropertyName("Value")]);
+                }
+                   
+            
             return new CityResponse();
         }
 
